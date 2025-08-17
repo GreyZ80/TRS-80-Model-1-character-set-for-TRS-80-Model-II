@@ -1,16 +1,30 @@
 # TRS-80 Model 1 character set for TRS-80 Model II
-A new character generator that brings the TRS-80 Model 1 character set, including the 2x3 graphics to the Big Tandy machines. No hardware modification, just a 2732 (4Kx8) EPROM and a wire with clip. Reverse text is still possible. 
+A new character generator that brings the TRS-80 Model 1 character set, including the 2x3 graphics to the Big Tandy machines. No hardware modification, just a 2732 (4Kx8) EPROM and a wire with clip. Reverse text is still possible. The character matrix of the Model 1 is 6x9 pixels. For the Model II the matrix is 6x10. This means that the Model II has true descenders. It als means that the lower row of block of the Tandy graphics are 4 pixels in height, instead of 3.
+
+## Compare Model 1 and Model II screens
+
+
+| Property | Model I | Model II |
+| ---- | --- | --- |
+| Screen width in characters | 64 | 80 |
+| Screen width in pixels | 384 | 640 |
+| Screen height in characters | 16 | 24 |
+| Screen height in pixels | 128 | 240 |
+| Character width | 6 pixels | 8 pixels |
+| Character height | 9 pixels | 10 pixels |
+
+
 
 ## Versions
-The is currently (2025) 1 version of the character generator EPROM:/
+There is currently (2025) 1 version of the character generator EPROM.\
 This version has the Tandy graphics in the same location as the Model 1. This means that the reverse characters in the Model II are moved.
-Changed to the Unfortunately A and B cannot be combined :( . See screenshots.
+
 
 > [!IMPORTANT] 
-> Use an EPROM that is fast enough for the pixel generation. This means that the Access Time should be less or equal to 350ns. Using slower EPROMS (e.g. 450ns access time) will result in anoying flickering pixels with some characters. 
+> Use an EPROM that is fast enough for the pixel generation. This means that the **Access Time** should be less or equal to **350ns**. Using slower EPROMS (e.g. 450ns access time) will result in anoying flickering pixels with some characters. 
 
 ## Bill of materials
-The follwoing hardware is needed for the new character generator
+The following hardware is needed for the new character generator
 - 2732 type EPROM. Parallel access. Serial EPROMs can not be used. Check the datasheet for the required access time of maximal 350ns.
 - Piece of wire, 4 inches in length.
 - Little test clip connected to the wire. Alternatively you can solder the wire to the IC ?? pin ?
