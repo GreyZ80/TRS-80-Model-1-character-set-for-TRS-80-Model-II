@@ -24,7 +24,32 @@ This version has the Tandy graphics in the same location as the Model 1. This me
 @@@@@@@@@ screenshot Model II characters
 
 The following short Basic programs was used to create the dump:
+```perl
 100 CLS
+110 FOR D = 1 to 40
+120 READ D
+130 PR$ = PR$ + chr$(D)
+140 NEXT D
+150 VP = VARPTR(PR$)
+160 EXEC VP
+200 GOTO 200
+1000 DATA 1,2,3,4,5 .....
+```
+The embedded Z80 assembler code is:
+```perl
+  LD HL, 0FD00
+  LD A,1  ; screen memory on
+  OUT (0FFh),A
+  LD B, 0
+REP:  LD A,L
+      LD (HL),A
+      INC HL
+      DJNZ REP
+  XOR  A
+  OUT (0FFh),A  ; screen memory off
+  RET
+```
+
 
 
 > [!IMPORTANT] 
