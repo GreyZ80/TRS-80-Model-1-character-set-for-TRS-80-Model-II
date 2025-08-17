@@ -1,24 +1,27 @@
 # TRS-80 Model 1 character set for TRS-80 Model II
-A new character generator that brings the TRS-80 Model 1 character set, including the 2x3 graphics to the Big Tandy machines. No hardware modification, just a 2732 (4Kx8) EPROM and a wire with clip. Reverse text is still possible. The character matrix of the Model 1 is 6x9 pixels. For the Model II the matrix is 6x10. This means that the Model II has true descenders. It als means that the lower row of block of the Tandy graphics are 4 pixels in height, instead of 3.
+A new character generator that brings the TRS-80 Model 1 character set, including the 2x3 graphics to the Big Tandy machines. No hardware modification, just a 2732 (4Kx8) EPROM and a wire with clip. Reverse text is still possible. 
 
 ## Compare Model 1 and Model II screens
 
+In normal operation, the screens have the following properties:
 
-| Property | Model I | Model II |
-| ---- | --- | --- |
-| Screen width in characters | 64 | 80 |
-| Screen width in pixels | 384 | 640 |
-| Screen height in characters | 16 | 24 |
-| Screen height in pixels | 128 | 240 |
-| Character width | 6 pixels | 8 pixels |
-| Character height | 9 pixels | 10 pixels |
+| Property | Model I | Model II | units |
+| ---- | --- | --- | ---- |
+| Screen width  | 64 | 80 | characters |
+|   | 384 | 640 | pixels |
+| Screen height | 16 | 24 | lines |
+|   | 128 | 240 | pixels |
+| Character width | 6 | 8 pixels | pixels |
+| Character height | 9 | 10 | pixels |
 
-
+The difference in character size allows for true descenders. It also means that the lower row of blocks in the Tandy graphics have a height of 4 instead of 3 pixels.
 
 ## Versions
-There is currently (2025) 1 version of the character generator EPROM.\
+There is currently (2025) one version of the character generator EPROM.\
 This version has the Tandy graphics in the same location as the Model 1. This means that the reverse characters in the Model II are moved.
 
+@@@@@@@@@ screenshot Model 1 characters.  Use machine lange routine embedded in Basic
+@@@@@@@@@ screenshot Model II characters
 
 > [!IMPORTANT] 
 > Use an EPROM that is fast enough for the pixel generation. This means that the **Access Time** should be less or equal to **350ns**. Using slower EPROMS (e.g. 450ns access time) will result in anoying flickering pixels with some characters. 
