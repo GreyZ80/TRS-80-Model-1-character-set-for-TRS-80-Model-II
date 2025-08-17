@@ -1,5 +1,5 @@
 # TRS-80 Model 1 character set for TRS-80 Model II
-A new character generator that brings the TRS-80 Model 1 character set, including the 2x3 graphics to the Big Tandy machines. No hardware modification, just a 2732 (4Kx8) EPROM and a wire with clip. Reverse text is still possible. 
+A new character generator that brings the TRS-80 Model 1 character set, including the 2x3 graphics to the Big Tandy machines. No hardware modification, just a 2732 (4Kx8) EPROM and a wire with clip. Reverse text is still possible. Tandy graphics are located from CHR$(128) ~ CHR$(191)
 
 ## Compare Model 1 and Model II screens
 
@@ -14,7 +14,7 @@ In normal operation, the screens have the following properties:
 | Character width | 6 | 8 pixels | pixels |
 | Character height | 9 | 10 | pixels |
 
-The difference in character size allows for true descenders. It also means that the lower row of blocks in the Tandy graphics have a height of 4 instead of 3 pixels.
+Character width and height inclde the character spacing of 1 pixel. The actuals characters are resp 5x7 and 8x9 pixels for the Model 1 and Model II. Characters are normally positioned in the upper right corner of the character boxThe difference in character size allows for true descenders. It also means that the lower row of blocks in the Tandy graphics have a height of 4 instead of 3 pixels.
 
 ## Versions
 There is currently (2025) one version of the character generator EPROM.\
@@ -37,7 +37,8 @@ The following short Basic programs was used to create the dump:
 ```
 The embedded Z80 assembler code is:
 ```perl
-  LD HL, 0FD00
+  DI      ; disable interrupts. Needed?
+  LD HL, 0FD00  ; start of screen memory
   LD A,1  ; screen memory on
   OUT (0FFh),A
   LD B, 0
@@ -47,6 +48,7 @@ REP:  LD A,L
       DJNZ REP
   XOR  A
   OUT (0FFh),A  ; screen memory off
+  EI      ; enable interrupts. Needed?
   RET
 ```
 
