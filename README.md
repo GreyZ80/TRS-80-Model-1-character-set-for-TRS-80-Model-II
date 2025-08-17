@@ -23,7 +23,7 @@ Bend pin 20 horizontal, as this pin is to be connected to the wire.
 Solder the wire to the pin.
 Solder the test clip to the other end of the wire.
 
-##Installation
+## Installation
 In order to install the new character generator, you will have to open the Model II. The character generator is located on the video board. All big Tandy computers have a dedicated video board. The character generator is placed in a 24 pin socket, which labelled U2?.\
 - Remove the cover of the Model II by removing the 2 bolts and gently lifting it up.
 - Loosen and remove the horizontal bracket that secures the PCB board. Prevent the bolts and/or nuts to drop inside the computer.
@@ -38,11 +38,19 @@ In order to install the new character generator, you will have to open the Model
 - Double check chip orientation and test clip connection.
 - Place the video board back in the computer. Make sure the test clip remains in place.
 - Place the board that was loacted to the right of the video board back into the computer. Again make sure the test clip remains in place.
-- Double check correct seating of both boards in their 80 pin sockets.
-Now correct operation of the character generator can be checked. Remove any floppy form the drive. Disconnect Hard Drive when used.
+- Double check correct seating of both boards in their 80 pin sockets.\
+
+## Quick test
+Now correct operation of the character generator can be checked. Remove any floppy from the drive. Disconnect Hard Drive when used.
 Power on the machine. It should ask for the floppy disk. The white background will have changed to ???????????????????????????????????????????\
 Power down the machine
-When there were problems, you will have to check your work, otherwise you can mount the bracket and place the cover.
+When there were problems, you will have to check your work.
 
-- 
+## Finishing up
+- Mount the bracket
+- Place the cover
+
+The machine can now be used again.\
+@@@ Test using basic\
+@@@ Test using assembler
 
