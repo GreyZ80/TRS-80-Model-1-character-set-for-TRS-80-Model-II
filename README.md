@@ -23,6 +23,10 @@ This version has the Tandy graphics in the same location as the Model 1. This me
 @@@@@@@@@ screenshot Model 1 characters.  Use machine lange routine embedded in Basic
 @@@@@@@@@ screenshot Model II characters
 
+The following short Basic programs was used to create the dump:
+100 CLS
+
+
 > [!IMPORTANT] 
 > Use an EPROM that is fast enough for the pixel generation. This means that the **Access Time** should be less or equal to **350ns**. Using slower EPROMS (e.g. 450ns access time) will result in anoying flickering pixels with some characters. 
 
