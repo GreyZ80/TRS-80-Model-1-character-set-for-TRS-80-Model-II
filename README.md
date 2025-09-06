@@ -7,6 +7,11 @@
 #                      #
 ########################
 ```
+To be added:
+- Binary dump of original character generator (2Kx8)
+- Binary dump of M14M2 character generator (2Kx8)
+- Hardware modification chematic
+
 ***
 A new character generator that brings the TRS-80 Model 1 character set, including the 2x3 graphics to the Big Tandy machines. No hardware modification, just a 2732 (4Kx8) EPROM and a wire with clip. Reverse text is still possible. Tandy graphics are located from CHR$(128) ~ CHR$(191)
 
