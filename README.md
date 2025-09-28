@@ -9,7 +9,7 @@
 ```
 To be added:
 - Binary dump of original character generator (2Kx8)
-- Binary dump of M14M2 character generator (2Kx8)
+- Binary dump of M14M2 character generator (4Kx8)
 - Hardware modification chematic
 
 ***
