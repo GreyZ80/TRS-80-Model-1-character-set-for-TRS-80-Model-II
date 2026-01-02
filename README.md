@@ -11,7 +11,9 @@ To be added:
 - Hardware modification schematic
 
 ***
-A new character generator that brings the TRS-80 Model 1 character set, including the 2x3 graphics to the Big Tandy machines. No hardware modification, just a 2732 (4Kx8) EPROM and a wire with clip. Reverse text is still possible. Tandy graphics are located from CHR$(128) ~ CHR$(191)
+A new character generator that brings the TRS-80 Model 1 character set, including the 2x3 graphics to the Big Tandy machines. No hardware modification, just a 2732 (4Kx8) EPROM and a wire with clip.\
+Tandy graphics are located from CHR$(128) ~ CHR$(191): 64 characters\
+Reverse Uppercase text is still present at CHR$(192) ~ CHR$(255): 64 characters\
 
 ***
 ## Compare Model 1 and Model II screens
