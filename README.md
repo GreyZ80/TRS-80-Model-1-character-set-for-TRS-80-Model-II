@@ -13,7 +13,7 @@ To be added:
 ***
 A new character generator that brings the TRS-80 Model 1 character set, including the 2x3 graphics to the Big Tandy machines. No hardware modification, just a 2732 (4Kx8) EPROM and a wire with clip.\
 Tandy graphics are located from CHR$(128) ~ CHR$(191): 64 characters\
-Reverse Uppercase text is still present at CHR$(192) ~ CHR$(255): 64 characters\
+Reverse Uppercase text is still present at CHR$(192) ~ CHR$(255): 64 characters
 
 ***
 ## Compare Model 1 and Model II screens
@@ -34,6 +34,16 @@ Character width and height include the character spacing of 1 pixel. The actuals
 ***
 ## Versions
 There is currently (2025) one version of the character generator EPROM.\
+Content:
+| Chr code | End | Content | Details |
+| ---- | --- | --- | ---- |
+| 00 - 15 |  | Box characters |  |
+| 16 - 31 | 384 | 640 | pixels |
+| 32 - 63 | Upper case | A - Z | lines |
+| 64 - 127  | Lower case |  |  |
+| 128 - 191 | Tandy Graphics |  |  |
+| 192 - 155 | Inverse Upper case |  |  |
+
 This version has the Tandy graphics in the same location as the Model 1. This means that the reverse characters in the Model II are moved from **xxx ~ yyy to ppp ~ qqq**.
 An alternative version can be created that has the reverse text still in the same location (... ~ ...). Model 1 graphics will be at (... ~ ...),
 @@@@@@@@@ screenshot Model 1 characters.  Use machine lange routine embedded in Basic
