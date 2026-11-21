@@ -46,20 +46,21 @@ Content:
 
 This version has the Tandy graphics in the same location as the Model 1. This means that the reverse characters in the Model II are moved from **xxx ~ yyy to ppp ~ qqq**.
 An alternative version can be created that has the reverse text still in the same location (... ~ ...). Model 1 graphics will be at (... ~ ...),
-@@@@@@@@@ screenshot Model 1 characters.  Use machine lange routine embedded in Basic
+@@@@@@@@@ screenshot Model 1 characters.\ 
+Use machine language routine embedded in Basic
 @@@@@@@@@ screenshot Model II characters
 
 The following short Basic programs was used to create the dump:
 ```perl
 100 CLS
-110 FOR D = 1 to 40
+110 FOR D = 1 to 20
 120 READ D
 130 PR$ = PR$ + chr$(D)
 140 NEXT D
 150 VP = VARPTR(PR$)
 160 EXEC VP
 200 GOTO 200
-1000 DATA 1,2,3,4,5 .....
+1000 DATA 243, 33, 0, 253, 62, 1, 211, 255, 6, 0, 125, 119, 35, 16, 251, 175, 211, 255, 251, 201
 ```
 The embedded Z80 assembler code is:
 ```perl
@@ -119,8 +120,8 @@ In order to install the new character generator, you will have to open the Model
 ***
 ## Quick test
 Now correct operation of the character generator can be checked. Remove any floppy from the drive. Disconnect Hard Drive when used.
-Power on the machine. It should ask for the floppy disk. The white background will have changed to ???????????????????????????????????????????\
-Power down the machine
+Power on the machine. It should ask for the floppy disk. The white background will have changed to ??????????????????????????????????????????? \
+Power down the machine.\
 When there were problems, you will have to check your work.
 
 ***
