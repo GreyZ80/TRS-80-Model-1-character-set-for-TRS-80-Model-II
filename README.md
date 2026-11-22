@@ -53,10 +53,10 @@ Use machine language routine embedded in Basic
 The following short Basic programs was used to create the dump:
 ```perl
 100 CLS
-110 FOR D = 1 to 20
+110 FOR I = 1 to 20
 120 READ D
 130 PR$ = PR$ + chr$(D)
-140 NEXT D
+140 NEXT I
 150 VP = VARPTR(PR$)
 160 EXEC VP
 200 GOTO 200
