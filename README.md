@@ -46,40 +46,22 @@ Content:
 
 This version has the Tandy graphics in the same location as the Model 1. This means that the reverse characters in the Model II are moved from **xxx ~ yyy to ppp ~ qqq**.
 An alternative version can be created that has the reverse text still in the same location (... ~ ...). Model 1 graphics will be at (... ~ ...),
-@@@@@@@@@ screenshot Model 1 characters.\ 
-Use machine language routine embedded in Basic
-@@@@@@@@@ screenshot Model II characters
 
-The following short Basic programs was used to create the dump:
-```perl
-100 CLS
-110 FOR I = 1 to 20
-120 READ D
-130 PR$ = PR$ + chr$(D)
-140 NEXT I
-150 VP = VARPTR(PR$)
-160 EXEC VP
-200 GOTO 200
-1000 DATA 243, 33, 0, 253, 62, 1, 211, 255, 6, 0, 125, 119, 35, 16, 251, 175, 211, 255, 251, 201
+Model 1 characterset (screen 64x16):
+<img width="770" height="577" alt="Model 1 Character Set" src="https://github.com/user-attachments/assets/f1b65293-30e1-49f5-9ebb-9517af643f71" />
+
+
+Original Model II characterset (screen 80x24):
+<img width="770" height="521" alt="Model II Character Set" src="https://github.com/user-attachments/assets/160f1ab6-0d0f-4b20-95fd-de825f97f3d6" />
+
+Modified Model II characterset (screen 80x24):\
 ```
-The embedded Z80 assembler code is:
-```perl
-  DI      ; disable interrupts. Needed?
-  LD HL, 0FD00  ; start of screen memory
-  LD A,1  ; screen memory on
-  OUT (0FFh),A
-  LD B, 0
-REP:  LD A,L
-      LD (HL),A
-      INC HL
-      DJNZ REP
-  XOR  A
-  OUT (0FFh),A  ; screen memory off
-  EI      ; enable interrupts. Needed?
-  RET
++---------------------+
+|                     |
+|  To be added later  |
+|                     |
++---------------------+
 ```
-
-
 
 > [!IMPORTANT] 
 > Use an EPROM that is fast enough for the pixel generation. This means that the **Access Time** should be less or equal to **350ns**. Using slower EPROMS (e.g. 450ns access time) will result in anoying flickering pixels with some characters. 
