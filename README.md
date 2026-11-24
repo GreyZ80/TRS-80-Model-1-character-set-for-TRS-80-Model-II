@@ -33,19 +33,6 @@ Character width and height include the character spacing of 1 pixel. The actuals
 
 ***
 ## Versions
-There is currently (2025) one version of the character generator EPROM.\
-Content:
-| Chr code | End | Content | Details |
-| ---- | --- | --- | ---- |
-| 00 - 15 |  | Box characters |  |
-| 16 - 31 | 384 | 640 | pixels |
-| 32 - 63 | Upper case | A - Z | lines |
-| 64 - 127  | Lower case |  |  |
-| 128 - 191 | Tandy Graphics |  |  |
-| 192 - 155 | Inverse Upper case |  |  |
-
-This version has the Tandy graphics in the same location as the Model 1. This means that the reverse characters in the Model II are moved from **xxx ~ yyy to ppp ~ qqq**.
-An alternative version can be created that has the reverse text still in the same location (... ~ ...). Model 1 graphics will be at (... ~ ...),
 
 Model 1 characterset (screen 64x16):
 <img width="770" height="577" alt="Model 1 Character Set" src="https://github.com/user-attachments/assets/f1b65293-30e1-49f5-9ebb-9517af643f71" />
@@ -53,6 +40,20 @@ Model 1 characterset (screen 64x16):
 
 Original Model II characterset (screen 80x24):
 <img width="770" height="521" alt="Model II Character Set" src="https://github.com/user-attachments/assets/160f1ab6-0d0f-4b20-95fd-de825f97f3d6" />
+
+
+There is currently (2025) only one version of the new character generator EPROM with the Model 1 graphics.\
+Content:
+| Chr code | Content | Details |
+| ---- | ---  | ---- |
+| 00 - 31 | Box characters |  |
+| 32 - 95 | Symbols, numerals and Upper case | ... |
+| 96 - 127  | Lower case |  |  |
+| 128 - 191 | Model 1 Graphics |  |  |
+| 192 - 255 | Inverse Upper case |  |  |
+
+This version has the Tandy graphics in the same location as the Model 1. This means that the reverse characters in the Model II are moved from **xxx ~ yyy to ppp ~ qqq**.
+An alternative version can be created that has the reverse text still in the same location (... ~ ...). Model 1 graphics will be at (... ~ ...),
 
 Modified Model II characterset (screen 80x24):\
 ```
